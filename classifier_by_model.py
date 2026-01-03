@@ -61,17 +61,15 @@ df["class"] = np.where(df["resposta_final"] == "Saúde (Irregularidade)", 1, 0)
 # ======================================================
 def get_models():
     return {
-        #"LogReg": LogisticRegression(max_iter=500),
-        #"RandomForest": RandomForestClassifier(n_estimators=200),
-        #"SVC": SVC(probability=True),
-        #"NaiveBayesMulti": MultinomialNB(),
-        #"NaiveBayesBernoulli": BernoulliNB(), # NAO USADO
-        #"KNN": KNeighborsClassifier(),
-        #"GradientBoosting": GradientBoostingClassifier(),
-        #"AdaBoost": AdaBoostClassifier(),
-        #"XGBoost": XGBClassifier(use_label_encoder=False, eval_metric="logloss"),
-        #"LightGBM": LGBMClassifier(),
-        "CatBoost": CatBoostClassifier(verbose=0)
+        "LogReg": LogisticRegression(max_iter=500),
+        "RandomForest": RandomForestClassifier(n_estimators=200),
+        "SVC": SVC(probability=True),
+        "NaiveBayesMulti": MultinomialNB(),
+        "KNN": KNeighborsClassifier(),
+        "GradientBoosting": GradientBoostingClassifier(),
+        "AdaBoost": AdaBoostClassifier(),
+        "XGBoost": XGBClassifier(use_label_encoder=False, eval_metric="logloss"),
+        "LightGBM": LGBMClassifier(),
     }
 
 
@@ -82,13 +80,11 @@ def get_search_spaces():
         "RandomForest": {"clf__n_estimators": [100, 200, 500], "clf__max_depth": [None, 10, 20]},
         "SVC": {"clf__C": [0.1, 1, 10]},
         "NaiveBayesMulti": {"clf__alpha": [0.1, 1, 10], "clf__fit_prior": [True, False]},
-        #"NaiveBayesBernoulli": {"clf__alpha": [0.1, 1, 10], "clf__fit_prior": [True, False]},
         "KNN": {"clf__n_neighbors": [3, 5, 7]},
         "GradientBoosting": {"clf__n_estimators": [100, 200], "clf__learning_rate": [0.05, 0.1], "clf__max_depth": [3, 6, 10]},
         "AdaBoost": {"clf__n_estimators": [50, 100, 200], "clf__learning_rate": [0.05, 0.1]},
         "XGBoost": {"clf__n_estimators": [100, 200], "clf__learning_rate": [0.05, 0.1], "clf__max_depth": [3, 6, 10]},
         "LightGBM": {"clf__n_estimators": [100, 200], "clf__learning_rate": [0.05, 0.1], "clf__max_depth": [3, 6, 10]},
-        "CatBoost": {"clf__n_estimators": [100, 200], "clf__learning_rate": [0.05, 0.1], "clf__max_depth": [3, 6, 10]}
     }
 
 

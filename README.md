@@ -1,4 +1,4 @@
-# Experimentation Pipeline
+# Text Summarization Experimentation Pipeline
 This repo contains the code of the Experimentation Pipeline used in the paper **Experimental Evaluation of Machine Learning Algorithms for Classifying Health-Related News with Indications of Irregularity** with the Health [Related News Dataset](https://zenodo.org/records/18039964).
 
 # How to cite
